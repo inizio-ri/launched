@@ -2,11 +2,36 @@ import React, { useState } from "react";
 import "./Course.css";
 
 const cards = [
-  { id: 1, img: "./ai.png", title: "ARTIFICIAL INTELLIGENCE", sub: "by Shruthi Ganta", enroll: "4143 Students Enrolled" },
-  { id: 2, img: "./wd.png", title: "WEB DEVELOPMENT", sub: "by Amrit Raj", enroll: "3897 Students Enrolled" },
-  { id: 3, img: "./ds.png", title: "DATA SCIENCE", sub: "by Meghana Gowda V", enroll: "2465 Students Enrolled" },
-  { id: 4, img: "./cs.png", title: "CYBER SECURITY", sub: "by Rohit Mukherjee", enroll: "1675 Students Enrolled" },
-  { id: 5, img: "./da.png", title: "DATA ANALYTICS", sub: "by Meghana Gowda V", enroll: "2626 Students Enrolled" }
+  { id: 1, 
+    img: "./ai.png", 
+    title: "ARTIFICIAL INTELLIGENCE", 
+    sub: "by Shruthi Ganta", 
+    enroll: "4143 Students Enrolled", 
+    desc:"This course introduces you to the fundamentals of Artificial Intelligence, focusing on how machines learn, think, and make decisions. You will explore machine learning algorithms, neural networks, and intelligent systems used across industries. By the end, you’ll understand real-world AI applications such as NLP, computer vision, and automated prediction models."},
+  { id: 2, 
+    img: "./wd.png", 
+    title: "WEB DEVELOPMENT", 
+    sub: "by Amrit Raj", 
+    enroll: "3897 Students Enrolled",
+    desc:"This course provides a complete understanding of how modern websites and web applications are built. You will learn frontend development for creating responsive interfaces and backend development for handling databases, servers, and APIs. The curriculum equips you with full-stack capabilities to build, deploy, and maintain professional web projects." },
+  { id: 3, 
+    img: "./ds.png", 
+    title: "DATA SCIENCE", 
+    sub: "by Meghana Gowda V", 
+    enroll: "2465 Students Enrolled",
+    desc:"This course blends programming, statistics, and machine learning to help you extract deep insights from complex datasets. You will build predictive models, explore advanced algorithms, and work with large-scale data using modern technologies. It prepares you for real-world data science workflows—from data collection to model deployment." },
+  { id: 4, 
+    img: "./cs.png", 
+    title: "CYBER SECURITY", 
+    sub: "by Rohit Mukherjee", 
+    enroll: "1675 Students Enrolled",
+    desc:"This course equips you with the knowledge needed to protect systems, networks, and digital assets from cyber threats. You will learn about vulnerabilities, encryption, network defense mechanisms, and ethical hacking techniques. The training prepares you to identify risks, prevent attacks, and respond effectively to security incidents." },
+  { id: 5, 
+    img: "./da.png", 
+    title: "DATA ANALYTICS", 
+    sub: "by Meghana Gowda V", 
+    enroll: "2626 Students Enrolled",
+    desc:"This course teaches you how to work with raw data, transform it into meaningful information, and support data-driven decisions. You will learn essential techniques like data cleaning, statistical analysis, and creating visual dashboards. By the end, you’ll be able to interpret datasets, uncover trends, and present insights with clarity." }
 ];
 
 const VISIBLE = 3; // number of cards visible at a time
@@ -67,13 +92,7 @@ const FlipCarousel = () => {
                   {/* BACK */}
                   <div className="flip-card-back">
                     <h2 className="card-title">{card.title}</h2>
-                    <p className="back-desc">
-                      AI-powered UGC tools for avatar content creation.
-                      <br /><br />
-                      • Create avatar assets using AI<br />
-                      • Generate textures matching mesh<br />
-                      • Mix & match assets easily
-                    </p>
+                    <p className="back-desc">{card.desc}</p>
                     <button className="button">Learn more</button>
                   </div>
 

@@ -2,10 +2,10 @@
 
 /* carousel */
 
-.carousel{
+.hero-carousel{
     width: 100vw;
     height: 100vh;
-    margin-top: 3px;
+    margin-top: 2px;
     overflow: hidden;
     position: relative;
 }
@@ -21,7 +21,7 @@
 
 
 
-.carousel .list .item{
+.hero-carousel .list .item{
     width: 180px;
     height: 250px;
     position: absolute;
@@ -38,8 +38,8 @@
 
 
 
-.carousel .list .item:nth-child(1),
-.carousel .list .item:nth-child(2){
+.hero-carousel .list .item:nth-child(1),
+.hero-carousel .list .item:nth-child(2){
     top: 0;
     left: 0;
     transform: translate(0, 0);
@@ -48,31 +48,27 @@
     height: 100%;
 }
 
-.carousel .list .item:nth-child(3){
+.hero-carousel .list .item:nth-child(3){
     object-fit: contain;
     left: 67%;
 }
 
-.carousel .list .item:nth-child(4){
+.hero-carousel .list .item:nth-child(4){
     left: calc(67% + 200px);
 }
 
-.carousel .list .item:nth-child(5){
+.hero-carousel .list .item:nth-child(5){
     left: calc(67% + 400px);
 }
 
-.carousel .list .item:nth-child(6){
+.hero-carousel .list .item:nth-child(6){
     left: calc(67% + 600px);
 }
 
-.carousel .list .item:nth-child(n+7){
+.hero-carousel .list .item:nth-child(n+7){
     left: calc(67% + 800px);
     opacity: 0;
 }
-
-
-
-
 
 .list .item .content{
     position: absolute;

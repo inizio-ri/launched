@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -7,13 +7,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Mentor.css';
 
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-
+// 1. Import Autoplay module
+import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 function Mentor() {
+  const [prevEl, setPrevEl] = useState(null);
+  const [nextEl, setNextEl] = useState(null);
+  const [paginationEl, setPaginationEl] = useState(null);
+
   return (
     <div className="mentor">
-      {/* <h1 className="heading">Flower Gallery</h1> */}
+        <h1 className="heading">Our Mentors</h1>
+        <h3 className="sub-heading">Learn from those who've been there, done that, and nailed it</h3>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -26,47 +31,62 @@ function Mentor() {
           depth: 100,
           modifier: 2.5,
         }}
-        pagination={{ el: '.mentor-pagination', clickable: true }}
+        // 2. Add Autoplay configuration
+        autoplay={{
+          delay: 2500,                // Time in ms between slides (2.5 seconds)
+          disableOnInteraction: false, // Keeps scrolling even after user clicks
+        }}
+        pagination={{ el: paginationEl, clickable: true }}
         navigation={{
-          nextEl: '.mentor-button-next',
-          prevEl: '.mentor-button-prev',
+          prevEl: prevEl,
+          nextEl: nextEl,
           clickable: true,
         }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
+        // 3. Add Autoplay to the modules list
+        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
         className="mentor_container"
       >
-        <SwiperSlide>
-          <img src={"./r1.png"} alt="slide_image" />
+        {/* Mentor1 - Apurva */}
+        <SwiperSlide className="mentor-slide">
+            <a href ="https://www.linkedin.com/in/apurvadonde/" target='blank'>
+          <img src="./mentor1.png" alt="slide_image" />
+          </a>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={"./r2.png"} alt="slide_image" />
+        {/* Mentor2 - Meghana */}
+        <SwiperSlide className="mentor-slide">
+          <a href ="https://www.linkedin.com/in/meghana-gowda-v-a322b916b/" target='blank'>
+            <img src="./mentor2.png" alt="slide_image" />
+          </a>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={"./r3.png"} alt="slide_image" />
+        {/* Mentor3 - Samrat */}
+        <SwiperSlide className="mentor-slide">
+            <a href ="https://www.linkedin.com/in/samrat-tomar-779288a9/" target='blank'>
+                <img src="./mentor3.png" alt="slide_image" />
+            </a>
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <img src={slide_image_4} alt="slide_image" />
+        {/* Mentor4 - Piyush */}
+        <SwiperSlide className="mentor-slide">
+            <a href ="https://www.linkedin.com/in/piiyush/" target='blank'>
+                <img src="./mentor4.png" alt="slide_image" />
+            </a>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={slide_image_5} alt="slide_image" />
+        {/* Mentor5 - Ayush */}
+        <SwiperSlide className="mentor-slide">
+            <a href ="https://www.linkedin.com/in/ayusofayush/" target='blank'>
+                <img src="./mentor5.png" alt="slide_image" />
+            </a>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={slide_image_6} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slide_image_7} alt="slide_image" />
-        </SwiperSlide> */}
-
-        <div className="swiper-controler">
-          <div className="mentor-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div className="mentor-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div className="mentor-pagination"></div>
-        </div>
       </Swiper>
+
+      <div className="mentor-controler">
+        <div className="mentor-button-prev slider-arrow" ref={(node) => setPrevEl(node)}>
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </div>
+        <div className="mentor-pagination" ref={(node) => setPaginationEl(node)}></div>
+        <div className="mentor-button-next slider-arrow" ref={(node) => setNextEl(node)}>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+      </div>
     </div>
   );
 }

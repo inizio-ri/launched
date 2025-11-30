@@ -71,7 +71,7 @@ export default function Carousel() {
   return (
     <>
 
-      <div className="carousel" ref={carouselRef}>
+      <div className="hero-carousel" ref={carouselRef}>
         <div className="list" ref={listRef}>
 
           {/* Convert all your items */}

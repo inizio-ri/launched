@@ -24,10 +24,10 @@ export default function Media() {
     <div className="Media">
         <div className="description">
       <div className="des1" fontColor="orange">
-        <h3><center>Our Collaborations</center></h3>
+        <h3><center>LaunchEd Global is Featured</center></h3>
       </div>
-      <div className="des2" fontColor="white">
-        <h1><center>Powered by Industry Partnerships.</center></h1>
+      <div className="des3" fontColor="white">
+        <h1><center>In the biggest Media Platforms.</center></h1>
       </div>
     </div>
     <div className="l3d-container">

@@ -1,9 +1,32 @@
 /* Base container */
+:root {
+  --primary: rgb(232,87,73);
+  --white: #ffffff;
+  --bg: #f5f5f5;
+}
+
 .mentor {
   max-width: 54rem; /* you can increase to 64rem / 72rem if you want bigger on large screens */
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   margin: 0 auto;
   box-sizing: border-box;
+  background-image: url("./bg.png");
+}
+
+
+.heading {
+  padding: 1rem 0;
+  color: rgb(232,87,73);
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.sub-heading {
+  padding-bottom: 1rem;
+  color: #444;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 300;
 }
 
 /* make container height adaptive */
@@ -30,7 +53,7 @@
 .mentor-slide img {
   width: 100%;
   height: auto;
-  max-height: 22rem;    /* preferred visual height on large screens */
+  max-height: 20rem;    /* preferred visual height on large screens */
   border-radius: 2rem;
   object-fit: cover;
   display: block;
@@ -43,14 +66,28 @@
 }
 
 /* Controller: use centered layout rather than fragile left offsets */
-.mentor-controler {
+/* .mentor-controler {
   position: relative;
   margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+} */
+
+.mentor-controler {
+  /* CHANGED: Removed absolute positioning */
+  position: relative;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem; /* Adds space between the image and the buttons */
+  z-index: 10;
 }
+
+/* ... keep the rest of your button/pagination CSS as is ... */
+
 
 /* example button styling - adjust classes if your slider library names differ */
 .mentor-controler .mentor-button-prev,
@@ -58,6 +95,7 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
+  color: rgb(232,87,73);
   background: var(--white);
   display: inline-flex;
   align-items: center;
@@ -72,8 +110,8 @@
 @media (max-width: 500px) {
   .mentor-controler .mentor-button-prev,
   .mentor-controler .mentor-button-next {
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 5.4rem;
+    height: 5.4rem;
   }
 }
 

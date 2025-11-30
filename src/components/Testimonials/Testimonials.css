@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 0rem 2rem;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .wrapper {
@@ -63,7 +63,7 @@ gap: 1rem;
 
 .carousel{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .tCarousel{
@@ -82,10 +82,11 @@ gap: 1rem;
     gap: 1rem;
     box-shadow: 0rem 1rem 3rem -50px #7d7d7d;
     animation: slide 5s linear infinite;
+    margin-bottom: 2px;
 }
 
-.testimonial:hover{
-  transform: rotateY(0deg) scale(1.05);
+.carousel:hover .testimonial{
+  animation-play-state: paused;
 }
 
 .testimonial>img{
