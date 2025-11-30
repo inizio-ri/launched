@@ -1,0 +1,26 @@
+.stats{
+margin-top: 5px;
+padding: 20px;
+background-color: black;
+width: 100%;
+justify-content: space-between;
+}
+
+.stat>span:first-child{
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.stat>:nth-child(1)
+{
+font-size: 2rem;
+}
+
+.stat:hover{
+    counter-reset: hover 1;
+}
+
+.stat>:nth-child(1)>:last-child{
+color: rgb(232, 87, 73);
+}

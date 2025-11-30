@@ -1,0 +1,44 @@
+.description .des1{
+  margin-top: 20px;
+  color: rgb(232,87,73);
+}
+
+.linear-3d-container {
+  width: 100%;
+  overflow: hidden;
+  perspective: 1000px;
+  padding: 40px 0;
+}
+
+.linear-3d-track {
+  display: flex;
+  width: max-content;
+  animation: slide 20s linear infinite;
+}
+
+.linear-3d-card {
+  flex: 0 0 auto;
+  width: 260px;
+  height: 160px;
+  margin-right: 25px;
+  transform: rotateY(-20deg);  /* 3D linear tilt */
+  transition: transform 0.3s ease;
+}
+
+.linear-3d-card:hover {
+  transform: rotateY(0deg) scale(1.05);  /* focus effect */
+}
+
+.linear-3d-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Infinite left scroll (linear movement) */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
