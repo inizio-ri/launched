@@ -1,0 +1,163 @@
+/* Base container */
+.mentor {
+  max-width: 54rem; /* you can increase to 64rem / 72rem if you want bigger on large screens */
+  padding: 4rem 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* make container height adaptive */
+.mentor_container {
+  width: 100%;
+  padding: 2rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Slide: responsive width with a sensible max */
+.mentor-slide {
+  width: 100%;
+  max-width: 37rem;   /* original intended max width */
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+
+/* Image: scale to slide width and maintain aspect ratio */
+.mentor-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 22rem;    /* preferred visual height on large screens */
+  border-radius: 2rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* hide optional shadows by default (keeps original behaviour) */
+.mentor-slide-shadow-left,
+.mentor-slide-shadow-right {
+  display: none;
+}
+
+/* Controller: use centered layout rather than fragile left offsets */
+.mentor-controler {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* example button styling - adjust classes if your slider library names differ */
+.mentor-controler .mentor-button-prev,
+.mentor-controler .mentor-button-next {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(18, 28, 53, 0.1);
+  cursor: pointer;
+  user-select: none;
+  border: none;
+}
+
+/* larger hit area on small screens */
+@media (max-width: 500px) {
+  .mentor-controler .mentor-button-prev,
+  .mentor-controler .mentor-button-next {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+}
+
+/* pagination */
+.mentor-pagination {
+  width: 15rem;
+  max-width: 60%;
+  margin: 0.5rem auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+}
+
+.mentor-pagination .mentor-pagination-bullet {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(18, 28, 53, 0.1);
+  background: rgba(0,0,0,0.12);
+}
+
+.mentor-pagination .mentor-pagination-bullet-active {
+  background: var(--primary);
+}
+
+/* small/medium screen breakpoints to adjust overall layout */
+@media (max-width: 990px) {
+  .mentor {
+    max-width: 48rem;
+    padding: 3rem 1rem;
+  }
+  .mentor-slide {
+    max-width: 32rem;
+  }
+  .mentor-slide img {
+    max-height: 20rem;
+  }
+  .mentor-pagination {
+    width: 12rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mentor {
+    max-width: 42rem;
+    padding: 2.5rem 1rem;
+  }
+  .mentor-slide {
+    max-width: 30rem;
+  }
+  .mentor-slide img {
+    max-height: 18rem;
+    border-radius: 1.2rem;
+  }
+  .mentor-pagination {
+    width: 11rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .mentor {
+    max-width: 28rem;
+    padding: 1.5rem 0.8rem;
+  }
+  .mentor_container {
+    padding: 1rem 0;
+    align-items: center;
+  }
+  .mentor-slide {
+    max-width: 28rem;
+  }
+  .mentor-slide img {
+    max-height: 22rem; /* keep visual emphasis for mobile */
+    border-radius: 1rem;
+  }
+  .mentor-pagination {
+    width: 10rem;
+  }
+}
+
+/* Optional: when slider shows multiple slides side-by-side, control slide size with a utility */
+.mentor-slide.small {
+  max-width: 28rem;
+}
+
+/* If your slider library injects style attributes on controls/pagination, consider overriding with specificity, not !important */

@@ -35,7 +35,8 @@ export default function Linear3DSlider() {
       <div className="des2" fontColor="black">
         <h1><center>Powered by Industry Partnerships.</center></h1>
       </div>
-    </div><div className="linear-3d-container">
+    </div>
+    <div className="linear-3d-container">
         <div className="linear-3d-track">
           {loopImages.map((src, i) => (
             <div className="linear-3d-card" key={i}>
@@ -43,6 +44,6 @@ export default function Linear3DSlider() {
             </div>
           ))}
         </div>
-      </div></>
+    </div></>
   );
 }

@@ -1,31 +1,40 @@
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css";
 import "./Featured.css";
+import data from "../../utils/slider.json";
+import { sliderSettings } from "../../utils/common.js";
 
-export default function Featured() {
-  return (
-    <div className="mosaic-wrapper">
-
-      {/* LEFT COLUMN */}
-      <div className="col left-col">
-        <div className="card medium">
-          <img src="/featured1.png" alt="Featured1" />
+  const Featured = () => {
+    return (
+      <section className="r-wrapper">
+        <div className="paddings innerWidth r-container">
+          <Swiper {...sliderSettings}>
+            <SliderButtons />
+            {data.map((card, i) => (
+              <SwiperSlide key={i}>
+                <div className="flexColStart r-card">
+                <img src={card.image}/>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+      </section>
+    );
+  };
 
-        <div className="card medium">
-          <img src="/featured2.jpg" alt="Featured2" />
-        </div>
-      </div>
+export default Featured;
 
-      {/* RIGHT COLUMN */}
-      <div className="col right-col">
-        <div className="card medium">
-          <img src="/featured3.png" alt="Featured3" />
-        </div>
-
-        <div className="card medium">
-          <img src="/featured4.jpg" alt="Featured4" />
-        </div>
-      </div>
-
-    </div>
-  );
-}
+const SliderButtons = () => {
+const swiper = useSwiper();
+return (
+  <>
+<div className="flexCenter left-button">
+<button onClick={()=> swiper.slidePrev() }>&lt;</button>
+</div>
+<div className="flexCenter right-button">
+  <button onClick={()=> swiper.slideNext() }>&gt;</button>
+</div>
+</>
+);
+};

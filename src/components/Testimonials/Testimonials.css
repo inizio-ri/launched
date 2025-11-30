@@ -3,18 +3,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 0rem 2rem;
+  margin-bottom: 5px;
 }
 
 .wrapper {
   display: grid;
   align-items: flex-end;
   width:100%;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;;
+}
+
+.wrapper>img:hover{
+  transform: rotateY(0deg) scale(1.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .wrapper>img{
-width: 25rem;
+width: 30rem;
 justify-self: center;
 }
 
@@ -27,9 +33,10 @@ gap: 1rem;
 .container>:nth-child(1)
 {
     font-size: 2rem;
+    color: rgb(232,87,73);
     text-transform: uppercase;
     display: block;
-    font-weight: bold;
+    font-weight: bold;;
 }
 
 .container>:nth-child(2)
@@ -37,6 +44,7 @@ gap: 1rem;
     font-size: 0.8rem;
     text-transform: uppercase;
     display: block;
+    font-style: italic;
 }
 
 .wrapper>:nth-child(3){
@@ -45,9 +53,12 @@ gap: 1rem;
 
 .reviews{
     font-size: 2rem;
+    color: rgb(232,87,73);
     font-weight: bold;
     text-transform: uppercase;
     background: none;
+    text-shadow: white;
+    z-index: 1;
 }
 
 .carousel{
@@ -70,12 +81,22 @@ gap: 1rem;
     padding: 1rem;
     gap: 1rem;
     box-shadow: 0rem 1rem 3rem -50px #7d7d7d;
+    animation: slide 5s linear infinite;
 }
+
+.testimonial:hover{
+  transform: rotateY(0deg) scale(1.05);
+}
+
 .testimonial>img{
 position: absolute!important;
 width: 5rem!important;
-top: -1.5rem!important;
-left: 45%;
+top: -2.2rem!important;
+height: 5rem;
+object-fit: cover;
+border-radius: 50%;
+left: 50%;
+transform: translateX(-50%);
 }
 
 .testimonial>span:nth-of-type(1)
@@ -96,4 +117,9 @@ border: none;
 .testimonial>span:nth-of-type(2)
 {
 font-weight: 500;
+}
+
+@keyframes slide {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
 }

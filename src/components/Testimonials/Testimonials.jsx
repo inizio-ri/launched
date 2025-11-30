@@ -23,7 +23,7 @@ return (
             </div>
         </div>
 
-        <div className="reviews">Reviews</div>
+        <div className="reviews">Loved by Thousands of Students</div>
 
         <div className="carousel">
         <Swiper
