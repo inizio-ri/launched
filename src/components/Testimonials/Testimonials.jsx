@@ -2,7 +2,7 @@ import React from "react";
 import "./Testimonials.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { TestimonialsData } from "../../images/Testimonialsdata.js";
+import { TestimonialsData } from "../../utils/Testimonialsdata.js";
 
 
 
