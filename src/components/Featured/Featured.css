@@ -72,3 +72,23 @@
   background: transparent;
   z-index: 50;
 }
+
+@media (max-width:600px) {
+
+  .r-container{
+  margin: 0;
+  padding: 0 35px;
+}
+
+  .left-button button{
+  font-size: 1.2rem;
+  padding: 1rem 1rem;
+  border-radius: 7px;
+}
+.right-button button{
+  font-size: 1.2rem;
+  padding: 1rem 1rem;
+  border-radius: 7px;
+}
+  
+}

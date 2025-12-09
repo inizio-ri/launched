@@ -27,9 +27,15 @@ return (
 
         <div className="carousel">
         <Swiper
-        slidesPerView={3}
-        slidesPerGroup={1}
-        spaceBetween={20}
+            slidesPerView={3}
+            slidesPerGroup={1}
+            spaceBetween={20}
+            breakpoints={{
+                0: { slidesPerView: 1 },
+                480: { slidesPerView: 1.2 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            }}
         className="tCarousel"
         >
         {

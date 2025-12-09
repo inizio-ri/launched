@@ -65,16 +65,6 @@
   display: none;
 }
 
-/* Controller: use centered layout rather than fragile left offsets */
-/* .mentor-controler {
-  position: relative;
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-} */
-
 .mentor-controler {
   /* CHANGED: Removed absolute positioning */
   position: relative;  
@@ -82,14 +72,10 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1rem; /* Adds space between the image and the buttons */
+  margin-top: .5rem;
   z-index: 10;
 }
 
-/* ... keep the rest of your button/pagination CSS as is ... */
-
-
-/* example button styling - adjust classes if your slider library names differ */
 .mentor-controler .mentor-button-prev,
 .mentor-controler .mentor-button-next {
   width: 3.5rem;
@@ -107,11 +93,11 @@
 }
 
 /* larger hit area on small screens */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .mentor-controler .mentor-button-prev,
   .mentor-controler .mentor-button-next {
-    width: 5.4rem;
-    height: 5.4rem;
+    width: 4.4rem;
+    height: 4.4rem;
   }
 }
 
@@ -138,6 +124,14 @@
   background: var(--primary);
 }
 
+.heading {
+  font-size: 2.5rem;
+}
+
+.sub-heading {
+  font-size: 1rem;
+  font-weight: 200;
+}
 /* small/medium screen breakpoints to adjust overall layout */
 @media (max-width: 990px) {
   .mentor {

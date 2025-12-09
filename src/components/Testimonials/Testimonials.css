@@ -71,6 +71,7 @@ gap: 1rem;
 }
 
 .testimonial {
+  min-height: 190px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -123,4 +124,74 @@ font-weight: 500;
 @keyframes slide {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0%); }
+}
+
+
+@media (max-width: 600px) {
+
+  .wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+
+  .wrapper img {
+    width: 80% !important;
+    justify-self: center;
+    height:auto !important;
+  }
+
+  .wrapper h2,
+  .wrapper p {
+    text-align: center !important;
+  }
+
+  .container > :nth-child(1) {
+    font-size: 1.6rem !important;
+    text-align: center !important;
+  }
+
+  .container > :nth-child(2) {
+    font-size: 0.9rem !important;
+    text-align: center !important;
+  }
+
+  .reviews {
+    font-size: 1rem !important;
+    margin-top: 1.5rem;
+    font-weight: 900;
+    text-align: center !important;
+  }
+
+  .tCarousel {
+    padding: 1rem !important;
+  }
+
+  .testimonial {
+    min-height: 220px !important;    /* Ensures equal height */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 1rem !important;
+    margin-top: 2rem;
+    box-sizing: border-box !important;
+  }
+
+  .testimonial > img {
+    width: 4rem !important;
+    height: 4rem !important;
+    top: -1.8rem !important;
+  }
+
+  .testimonial span:nth-of-type(1) {
+    font-size: 0.85rem !important;
+    margin-top: 2.5rem !important;
+    flex-grow: 1;
+  }
+
+  .testimonial span:nth-of-type(2) {
+    font-size: 0.9rem !important;
+  }
 }

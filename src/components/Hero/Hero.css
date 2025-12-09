@@ -264,7 +264,7 @@
     background-color: rgba(232, 87, 73, 0.796);
     left: 0;
     top: 0;
-    animation: runningTime 7s linear 1 forwards;
+    animation: runningTime 10s linear 1 forwards;
 }
 
 @keyframes runningTime {
@@ -316,4 +316,92 @@
         padding: 10px 15px;
         font-size: 14px;
     }
+}
+
+/* ---------------------------------------- */
+/*   FINAL MOBILE FIX — FULLY WORKING       */
+/* ---------------------------------------- */
+@media (max-width: 600px) {
+
+  .hero-carousel {
+    height: 75vh !important;
+    overflow: hidden;
+  }
+
+  .hero-carousel .list .item {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    border-radius: 0 !important;
+  }
+
+  .hero-carousel .list .item:nth-child(3),
+  .hero-carousel .list .item:nth-child(4),
+  .hero-carousel .list .item:nth-child(5),
+  .hero-carousel .list .item:nth-child(6),
+  .hero-carousel .list .item:nth-child(n+7) {
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    opacity: 0 !important;
+  }
+
+  .hero-carousel .list .item:nth-child(2) {
+    opacity: 1 !important;
+  }
+
+  .hero-carousel .list .item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hero-carousel .list .item .content {
+    display: block !important; /* Important */
+    width: 85% !important;
+    left: 20px !important;
+    bottom: 18% !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: 10;
+  }
+
+  .content .titled,
+  .content .title,
+  .content .name,
+  .content .nameStudy {
+    font-size: 32px !important;
+    line-height: 1.2;
+  }
+
+  .content .des,
+  .content .desc,
+  .content .desStudy {
+    font-size: 14px !important;
+    margin-left: 0 !important;
+  }
+
+  .content .btn button {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+  }
+
+  .arrows {
+    bottom: 7% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 120px !important;
+  }
+
+  .arrows button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .time {
+    bottom: 15% !important;
+    width: 50% !important;
+  }
 }

@@ -24,3 +24,14 @@ font-size: 2rem;
 .stat>:nth-child(1)>:last-child{
 color: rgb(232, 87, 73);
 }
+
+@media (max-width: 600px){
+   .stat>span:first-child{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .stat>:nth-child(1){
+        font-size: 1rem;
+    } 
+}

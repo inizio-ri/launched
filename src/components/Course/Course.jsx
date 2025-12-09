@@ -34,14 +34,28 @@ const cards = [
     desc:"This course teaches you how to work with raw data, transform it into meaningful information, and support data-driven decisions. You will learn essential techniques like data cleaning, statistical analysis, and creating visual dashboards. By the end, you’ll be able to interpret datasets, uncover trends, and present insights with clarity." }
 ];
 
-const VISIBLE = 3; // number of cards visible at a time
+const getVisibleCards = () => {
+  if (window.innerWidth <= 600) return 1;
+  if (window.innerWidth <= 900) return 2;
+  return 3;
+};
+
 
 const FlipCarousel = () => {
   const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(getVisibleCards());
+
+React.useEffect(() => {
+  const handleResize = () => setVisible(getVisibleCards());
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+
 
   const next = () => {
     // max start index so that last view still shows VISIBLE cards
-    const maxIndex = cards.length - VISIBLE;
+    const maxIndex = cards.length - visible;
     setIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
@@ -73,7 +87,8 @@ const FlipCarousel = () => {
         <div className="carousel-viewport">
           <div
             className="carousel-slider"
-            style={{ transform: `translateX(-${index * (100 / VISIBLE)}%)` }}
+            style={{ transform: `translateX(-${index * (100 / visible)}%)` }}
+
           >
             {cards.map((card) => (
               <div key={card.id} className="flip-card">
@@ -103,10 +118,10 @@ const FlipCarousel = () => {
         </div>
 
         <button
-          className={`nav-button right ${index === cards.length - VISIBLE ? "disabled" : ""}`}
+          className={`nav-button right ${index === cards.length - visible ? "disabled" : ""}`}
           onClick={next}
           aria-label="Next"
-          disabled={index === cards.length - VISIBLE}
+          disabled={index === cards.length - visible}
         >
           ❯
         </button>

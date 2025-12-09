@@ -52,3 +52,16 @@
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0%); }
 }
+
+@media (max-width:600px){
+.description .des3{
+  font-size: 12px;
+}
+
+.l3d-card {
+  border-radius: 25px;
+  width: 170px;
+  height: 85px;
+  margin-right: 5px;
+}
+}
